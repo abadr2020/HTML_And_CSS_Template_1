@@ -1,5 +1,7 @@
 /* Start Variables */
-
+:root {
+  --main-color: #10cab7;
+}
 /* End Variables */
 
 /* Start Global Rules */
@@ -20,19 +22,19 @@ body {
     margin-right: auto;
 }
 /* Styles for screens smaller than 768px */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .container {
       width: 750px;
     }
   }
   /* Styles for screens between 600px and 992px */
-  @media (max-width: 992px) {
+  @media (min-width: 992px) {
     .container {
       width: 970px;
     }
   }
   /* Styles for screens larger than 1200px */
-  @media (max-width: 1200px) {
+  @media (min-width: 1200px) {
     .container {
       width: 1170px;
     }
@@ -90,6 +92,7 @@ body {
     min-width: 200px;
     top: calc(100% + 15px);
     display: none;
+    z-index: 1;
   }
   .header .links ul::before {
     content: "";
@@ -116,7 +119,7 @@ body {
   /* End Header */
   /* Start Landing (Banner) */
   .landing {
-    background-image: url(../images/banner.jpg);
+    background-image: url(../images/landing.jpg);
     background-size: cover;
     height: calc(100vh - 64px);
     position: relative;
@@ -126,11 +129,48 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+    text-align: center;
+    max-width: 100%;
+    width: 320px;
   }
   .landing .intro-text h1 {
     margin:0;
+    font-weight: bold;
+    font-size: 50px;
+    color: var(--main-color);
   }
   .landing .intro-text p {
+    font-size: 19px;
+    line-height: 1.8;
   }
   /* End Landing (Banner) */
+  /* Start Features */
+  .features {
+    padding-top: 60px;
+    padding-bottom: 60px ;
+    background-color: #f6f6f6;
+  }
+
+  .features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 20px;
+  }
+  .features .feat {
+    padding: 20px;
+    text-align: center;
+  }
+  .features .feat i {
+    color: var(--main-color);  
+  }
+  .features .feat h3 {
+    font-weight: 800;
+    margin:30px 0;
+  }
+  .features .feat p {
+    line-height: 1.8;
+    font-size: 17px;
+    color: #777;
+  }
+  /* End Features */
 
