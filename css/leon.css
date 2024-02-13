@@ -53,7 +53,7 @@ body {
     width: 60px;
   }
   .header .links {
-    position: relative;
+    position: relative; /* Used with position absolute in the ul element to be positioned relative to it */
   }
   .header .links:hover .icon span:nth-child(2) {
     width: 100%;
@@ -61,11 +61,12 @@ body {
   .header .links:hover ul {
     display: block;
   }
-  .header .links .icon {
+  /* The bars icon */
+  .header .links .icon { 
     width: 30px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;  
+    flex-wrap: wrap; /* Used to wrap all the bars below each other */
+    justify-content: flex-end;  /* Used to reflect the icon 180 degree */
 }
   .header .links .icon span {
     background-color: #333;
@@ -87,7 +88,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f6f6f6;
-    position: absolute;
+    position: absolute; /* Used with position relative in the parent (.links) to be positioned relative to it */ 
     right: 0;
     min-width: 200px;
     top: calc(100% + 15px);
@@ -121,16 +122,21 @@ body {
   .landing {
     background-image: url(../images/landing.jpg);
     background-size: cover;
-    height: calc(100vh - 64px);
-    position: relative;
+    height: calc(100vh - 64px); /* We subtracted the 64px which the size of the header */
+    position: relative; /* Used to set the intro text centered to this parent */
   }
   .landing .intro-text {
+    /* Centring the text horizontally and vertically */
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+    /* ------------------ */
+    /* Aligning the text */
     text-align: center;
+    /* Max width is the width of the parent */
     max-width: 100%;
+    /* Limit the width of the text */
     width: 320px;
   }
   .landing .intro-text h1 {
@@ -150,15 +156,18 @@ body {
     padding-bottom: 60px ;
     background-color: #f6f6f6;
   }
-
   .features .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
     gap: 20px;
+    /* display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; */
   }
   .features .feat {
     padding: 20px;
     text-align: center;
+    /* width: 300px;  Used with Flex box in (.container)*/
   }
   .features .feat i {
     color: var(--main-color);  
